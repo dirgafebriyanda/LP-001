@@ -1,0 +1,356 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --h2-font: 2.5rem;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --other-color: #727272;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--text-color);
+  height: 55px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 3px 3px 5px rgb(36, 0, 0, 0.7);
+}
+.navbar-logo a {
+  font-weight: bold;
+  color: var(--bg-color);
+  letter-spacing: 2px;
+}
+.navbar-list {
+  display: flex;
+  list-style: none;
+}
+.navbar-list a {
+  margin-right: 20px;
+  color: var(--other-color);
+  position: relative;
+  font-weight: 500;
+  overflow: hidden;
+  padding-bottom: 4px;
+  letter-spacing: 1.5px;
+  transition: all 0.7s ease;
+}
+.navbar-list a:hover {
+  color: var(--bg-color);
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.navbar-toggle span {
+  width: 25px;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--bg-color);
+  display: block;
+  margin: 3px 0;
+  transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+.navbar-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+  background: var(--bg-color);
+}
+.navbar-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+  background: var(--bg-color);
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--text-color);
+  min-width: 200px;
+  border: 1px solid #ccc;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 5px 15px;
+}
+
+.dropdown-toggle {
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+}
+
+.dropdown-menu li a {
+  color: var(--other-color);
+  display: block;
+  letter-spacing: 1.5px;
+}
+
+.jumbotron {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 75px 150px 75px 150px;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.jumbotron .caption h4 {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.jumbotron .caption h2 {
+  font-size: var(--h2-font);
+  font-weight: 800;
+  padding-bottom: 5px;
+}
+.jumbotron .caption p {
+  letter-spacing: 1.2;
+  padding-bottom: 5px;
+}
+.jumbotron .caption .logo {
+  padding-top: 10px;
+  font-size: 35px;
+}
+.jumbotron .caption .logo i {
+  display: inline-block;
+  padding-right: 10px;
+  color: var(--other-color);
+  transition: all 0.7s ease;
+}
+.jumbotron .caption .logo i:hover {
+  transform: translateY(-4px);
+  color: var(--text-color);
+}
+
+.jumbotron img {
+  max-width: 300px;
+}
+.arrow {
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+}
+.arrow i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 50%;
+  font-size: 25px;
+  transition: color 0.7s ease, transform 0.7s ease;
+  border: var(--text-color) solid 2px;
+}
+.arrow i:hover {
+  background: transparent;
+  color: var(--text-color);
+  transform: translateY(-4px);
+}
+.container {
+  padding: 30px;
+  display: flex;
+  gap: 1.5rem;
+}
+.content {
+  flex: 5;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem 2rem;
+}
+.card {
+  padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.card h2 {
+  font-size: var(--h2-font);
+}
+aside {
+  flex: 1;
+}
+aside .card {
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+}
+.text-center {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.card-body {
+  display: flex;
+  gap: 20px;
+}
+.card-body img {
+  height: 100%;
+  max-width: 200px;
+}
+
+.card-body p {
+  padding-bottom: 10px;
+  color: var(--other-color);
+  font-size: 16px;
+}
+
+.card-body-aside img {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.pancasila-list {
+  list-style-type: decimal;
+  padding-left: 20px;
+  color: var(--other-color);
+}
+
+.pancasila-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+.footer {
+  background: var(--text-color);
+  color: var(--other-color);
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Bayangan di atas footer */
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+  cursor: default;
+}
+
+.footer .social-links {
+  margin-top: 10px;
+}
+
+.footer .social-links a {
+  color: var(--other-color);
+  margin: 0 10px;
+  font-size: 25px;
+  text-decoration: none;
+  transition: all 0.7s ease;
+  display: inline-block;
+}
+
+.footer .social-links a:hover {
+  color: var(--bg-color);
+  transform: translateY(-4px);
+}
+@media (max-width: 768px) {
+  .container {
+    display: block;
+  }
+  .navbar {
+    justify-content: space-between;
+  }
+  .navbar-logo a {
+    margin-left: 20px;
+  }
+  .navbar-list {
+    flex-direction: column;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--text-color);
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all 0.7s ease;
+  }
+  .navbar-list.show {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .navbar-list li {
+    padding-top: 15px;
+    margin-left: 20px;
+  }
+  .navbar-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+  .dropdown-menu {
+    position: static;
+    border: 0;
+  }
+  .jumbotron {
+    flex-direction: column;
+    padding: 60px 20px 20px 20px;
+  }
+  .jumbotron .caption h4 {
+    font-size: 18px;
+  }
+  .jumbotron .caption h2 {
+    font-size: 25px;
+  }
+
+  .jumbotron .caption {
+    order: 2;
+    text-align: center;
+  }
+  .jumbotron .caption .logo {
+    padding-top: 10px;
+    font-size: 25px;
+  }
+  .jumbotron img {
+    order: 1;
+    width: 250px;
+  }
+  .jumbotron p {
+    font-size: 12px;
+  }
+  .arrow {
+    bottom: 5%;
+    right: 2%;
+  }
+  .arrow i {
+    height: 35px;
+    width: 35px;
+    font-size: 22px;
+  }
+  aside {
+    padding-top: 40px;
+  }
+  .card-body {
+    flex-direction: column;
+  }
+  .card-body p {
+    font-size: 12px;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+  .pancasila-list li {
+    font-size: 12px;
+  }
+}
